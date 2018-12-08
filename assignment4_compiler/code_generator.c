@@ -330,6 +330,22 @@ int statement()
         nextToken();
         statement();
     }
+    
+    else if (getCurrentTokenType() == whilesym)
+    {
+        
+        nextToken();
+        condition();
+        emit(JPC, 0, 0, 0);
+        if (getCurrentTokenType() != dosym)
+        {
+            return 11;
+        }
+        
+        nextToken();
+        statement();
+        emit(JMP, 0, 0, 0);
+    }
     return 0;
 }
 
