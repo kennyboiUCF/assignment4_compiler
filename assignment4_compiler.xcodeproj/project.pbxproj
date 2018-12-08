@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4FC4938A21BBA9FB00D39EC4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4FC4938921BBA9FB00D39EC4 /* main.c */; };
+		4FC493AB21BBAA0E00D39EC4 /* data.c in Sources */ = {isa = PBXBuildFile; fileRef = 4FC4939E21BBAA0C00D39EC4 /* data.c */; };
+		4FC493AC21BBAA0E00D39EC4 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 4FC4939F21BBAA0C00D39EC4 /* Makefile */; };
+		4FC493AD21BBAA0E00D39EC4 /* code_generator.c in Sources */ = {isa = PBXBuildFile; fileRef = 4FC493A121BBAA0D00D39EC4 /* code_generator.c */; };
+		4FC493AE21BBAA0E00D39EC4 /* symbol.c in Sources */ = {isa = PBXBuildFile; fileRef = 4FC493A221BBAA0D00D39EC4 /* symbol.c */; };
+		4FC493AF21BBAA0E00D39EC4 /* token.c in Sources */ = {isa = PBXBuildFile; fileRef = 4FC493A521BBAA0D00D39EC4 /* token.c */; };
+		4FC493B021BBAA0E00D39EC4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4FC493A821BBAA0D00D39EC4 /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +29,19 @@
 
 /* Begin PBXFileReference section */
 		4FC4938621BBA9FB00D39EC4 /* assignment4_compiler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = assignment4_compiler; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FC4938921BBA9FB00D39EC4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		4FC4939E21BBAA0C00D39EC4 /* data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = data.c; sourceTree = "<group>"; };
+		4FC4939F21BBAA0C00D39EC4 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		4FC493A021BBAA0C00D39EC4 /* test */ = {isa = PBXFileReference; lastKnownFileType = folder; path = test; sourceTree = "<group>"; };
+		4FC493A121BBAA0D00D39EC4 /* code_generator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = code_generator.c; sourceTree = "<group>"; };
+		4FC493A221BBAA0D00D39EC4 /* symbol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = symbol.c; sourceTree = "<group>"; };
+		4FC493A321BBAA0D00D39EC4 /* token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = token.h; sourceTree = "<group>"; };
+		4FC493A421BBAA0D00D39EC4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4FC493A521BBAA0D00D39EC4 /* token.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = token.c; sourceTree = "<group>"; };
+		4FC493A621BBAA0D00D39EC4 /* data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = data.h; sourceTree = "<group>"; };
+		4FC493A721BBAA0D00D39EC4 /* symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = symbol.h; sourceTree = "<group>"; };
+		4FC493A821BBAA0D00D39EC4 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = "../../../Downloads/assignment4-compiler-toplaners-master/main.c"; sourceTree = "<group>"; };
+		4FC493A921BBAA0D00D39EC4 /* vm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vm; sourceTree = "<group>"; };
+		4FC493AA21BBAA0E00D39EC4 /* code_generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = code_generator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +74,19 @@
 		4FC4938821BBA9FB00D39EC4 /* assignment4_compiler */ = {
 			isa = PBXGroup;
 			children = (
-				4FC4938921BBA9FB00D39EC4 /* main.c */,
+				4FC493A121BBAA0D00D39EC4 /* code_generator.c */,
+				4FC493AA21BBAA0E00D39EC4 /* code_generator.h */,
+				4FC4939E21BBAA0C00D39EC4 /* data.c */,
+				4FC493A621BBAA0D00D39EC4 /* data.h */,
+				4FC493A821BBAA0D00D39EC4 /* main.c */,
+				4FC4939F21BBAA0C00D39EC4 /* Makefile */,
+				4FC493A421BBAA0D00D39EC4 /* README.md */,
+				4FC493A221BBAA0D00D39EC4 /* symbol.c */,
+				4FC493A721BBAA0D00D39EC4 /* symbol.h */,
+				4FC493A021BBAA0C00D39EC4 /* test */,
+				4FC493A521BBAA0D00D39EC4 /* token.c */,
+				4FC493A321BBAA0D00D39EC4 /* token.h */,
+				4FC493A921BBAA0D00D39EC4 /* vm */,
 			);
 			path = assignment4_compiler;
 			sourceTree = "<group>";
@@ -118,7 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FC4938A21BBA9FB00D39EC4 /* main.c in Sources */,
+				4FC493AE21BBAA0E00D39EC4 /* symbol.c in Sources */,
+				4FC493AC21BBAA0E00D39EC4 /* Makefile in Sources */,
+				4FC493AF21BBAA0E00D39EC4 /* token.c in Sources */,
+				4FC493AD21BBAA0E00D39EC4 /* code_generator.c in Sources */,
+				4FC493AB21BBAA0E00D39EC4 /* data.c in Sources */,
+				4FC493B021BBAA0E00D39EC4 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

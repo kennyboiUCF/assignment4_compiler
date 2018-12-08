@@ -1,0 +1,144 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		4FC4939621BBAA0C00D39EC4 /* data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = data.h; sourceTree = "<group>"; };
+		4FC4939721BBAA0C00D39EC4 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		4FC4939821BBAA0C00D39EC4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		4FC4939921BBAA0C00D39EC4 /* vm.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = vm.o; sourceTree = "<group>"; };
+		4FC4939A21BBAA0C00D39EC4 /* vm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vm.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		4FC4939021BBAA0C00D39EC4 = {
+			isa = PBXGroup;
+			children = (
+				4FC4939621BBAA0C00D39EC4 /* data.h */,
+				4FC4939721BBAA0C00D39EC4 /* Makefile */,
+				4FC4939821BBAA0C00D39EC4 /* main.c */,
+				4FC4939921BBAA0C00D39EC4 /* vm.o */,
+				4FC4939A21BBAA0C00D39EC4 /* vm.h */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		4FC4939521BBAA0C00D39EC4 /* vm */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 4FC4939B21BBAA0C00D39EC4 /* Build configuration list for PBXLegacyTarget "vm" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "/Users/kennethrosario/Downloads/assignment4-compiler-toplaners-master/vm";
+			dependencies = (
+			);
+			name = vm;
+			passBuildSettingsInEnvironment = 1;
+			productName = vm;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		4FC4939121BBAA0C00D39EC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 4FC4939421BBAA0C00D39EC4 /* Build configuration list for PBXProject "vm" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4FC4939021BBAA0C00D39EC4;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FC4939521BBAA0C00D39EC4 /* vm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		4FC4939221BBAA0C00D39EC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		4FC4939321BBAA0C00D39EC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		4FC4939C21BBAA0C00D39EC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = vm;
+			};
+			name = Debug;
+		};
+		4FC4939D21BBAA0C00D39EC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = vm;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FC4939421BBAA0C00D39EC4 /* Build configuration list for PBXProject "vm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC4939221BBAA0C00D39EC4 /* Debug */,
+				4FC4939321BBAA0C00D39EC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FC4939B21BBAA0C00D39EC4 /* Build configuration list for PBXLegacyTarget "vm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC4939C21BBAA0C00D39EC4 /* Debug */,
+				4FC4939D21BBAA0C00D39EC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4FC4939121BBAA0C00D39EC4 /* Project object */;
+}
