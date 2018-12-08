@@ -309,10 +309,21 @@ int expression()
 
 int term()
 {
-    /**
-     * TODO
-     * */
-    
+    factor();
+    while (getCurrentTokenType() == multsym || getCurrentTokenType() == slashsym)
+    {
+        nextToken();
+        factor();
+        if (getCurrentTokenType() == multsym )
+        {
+            emit(MUL, 0, 0, 0);
+        }
+        else
+        {
+            emit(DIV, 0, 0, 0);
+        }
+        
+    }
     return 0;
 }
 
