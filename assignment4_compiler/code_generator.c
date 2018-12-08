@@ -298,9 +298,10 @@ int statement()
         {
             return 7;
         }
-        
+        emit(CAL, 0, 0, 0);
         nextToken();
     }
+    
     else if (getCurrentTokenType() == beginsym)
     {
         nextToken();
@@ -351,13 +352,58 @@ int statement()
 
 int condition()
 {
-    /**
-     * TODO
-     * 
-     * Also, rel-op will be parsed and corresponding code will be generated here
-     * */
-
+    if(getCurrentTokenType() == oddsym)
+    {
+        emit(ODD, 0, 0, 0);
+        nextToken();
+        expression();
+    }
     
+    else
+    {
+        expression();
+        if (getCurrentTokenType() != eqsym || getCurrentTokenType() != neqsym || getCurrentTokenType() != lessym || getCurrentTokenType() != leqsym || getCurrentTokenType() != gtrsym || getCurrentTokenType() != geqsym )
+        {
+            return 12;
+        }
+        else
+        {
+            if (getCurrentTokenType() == eqsym)
+            {
+                emit(EQL, 0, 0, 0);
+            }
+            
+            else if (getCurrentTokenType() == neqsym)
+            {
+                emit(NEQ, 0, 0, 0);
+                
+            }
+            
+            else if (getCurrentTokenType() == lessym)
+            {
+                emit(LSS, 0, 0, 0);
+                
+            }
+            
+            else if (getCurrentTokenType() == leqsym)
+            {
+                emit(LEQ, 0, 0, 0);
+                
+            }
+            else if (getCurrentTokenType() == gtrsym)
+            {
+                emit(GTR, 0, 0, 0);
+                
+            }
+            else if (getCurrentTokenType() == geqsym)
+            {
+                emit(GEQ, 0, 0, 0);
+            }
+            
+        }
+        nextToken();
+        expression();
+    }
     return 0;
 }
 
