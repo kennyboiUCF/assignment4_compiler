@@ -376,24 +376,20 @@ int condition()
             else if (getCurrentTokenType() == neqsym)
             {
                 emit(NEQ, 0, 0, 0);
-                
             }
             
             else if (getCurrentTokenType() == lessym)
             {
                 emit(LSS, 0, 0, 0);
-                
             }
             
             else if (getCurrentTokenType() == leqsym)
             {
                 emit(LEQ, 0, 0, 0);
-                
             }
             else if (getCurrentTokenType() == gtrsym)
             {
                 emit(GTR, 0, 0, 0);
-                
             }
             else if (getCurrentTokenType() == geqsym)
             {
