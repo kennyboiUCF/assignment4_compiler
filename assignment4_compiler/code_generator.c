@@ -261,20 +261,57 @@ int const_declaration()
 
 int var_declaration()
 {
-    /**
-     * TODO
-     * */
-    
-    return 0;
+    if (getCurrentTokenType() == varsym)
+    {
+        while (getCurrentTokenType() == commasym)
+        {
+            
+            nextToken();
+            if (getCurrentTokenType() != identsym)
+            {
+                return 1;
+            }
+            
+            nextToken();
+        }
+        if (getCurrentTokenType() != semicolonsym)
+        {
+            return 10;
+        }
+        emit(STO, currentReg, vmCode[nextCodeIndex].l, vmCode[nextCodeIndex].l);
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 int proc_declaration()
 {
-    /**
-     * TODO
-     * */
-    
-    return 0;
+    while (getCurrentTokenType() == procsym)
+    {
+        nextToken();
+        if (getCurrentTokenType() != identsym)
+        {
+            return 3;
+        }
+        
+        nextToken();
+        if (getCurrentTokenType() != semicolonsym)
+        {
+            return 5;
+        }
+        nextToken();
+        block();
+        if (getCurrentTokenType() != semicolonsym)
+        {
+            return 5;
+            
+        }
+        return 0;
+    }
+    return 7;
 }
 
 int statement()
