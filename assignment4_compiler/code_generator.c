@@ -279,10 +279,57 @@ int proc_declaration()
 
 int statement()
 {
-    /**
-     * TODO
-     * */
+    if (getCurrentTokenType() == identsym)
+    {
+        nextToken();
+        if (getCurrentTokenType() != becomessym)
+        {
+            return 7;
+        }
+        
+        nextToken();
+        expression();
+    }
+    else if (getCurrentTokenType() == callsym)
+    {
+        
+        nextToken();
+        if (getCurrentTokenType() != identsym)
+        {
+            return 7;
+        }
+        
+        nextToken();
+    }
+    else if (getCurrentTokenType() == beginsym)
+    {
+        nextToken();
+        statement();
+        while (getCurrentTokenType() == semicolonsym)
+        {
+            nextToken();
+            statement();
+        }
+    }
+    if (getCurrentTokenType() != endsym)
+    {
+        return 14;
+    }
+    nextToken();
     
+    if (getCurrentTokenType() == ifsym)
+    {
+        
+        nextToken();
+        condition();
+        if(getCurrentTokenType() != thensym)
+        {
+            return 9;
+        }
+        emit(JPC, 0, 0, 0);
+        nextToken();
+        statement();
+    }
     return 0;
 }
 
