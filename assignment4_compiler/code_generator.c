@@ -243,10 +243,56 @@ int program()
 
 int block()
 {
-    /**
-     * TODO
-     * */
-
+    int dec;
+    if (getCurrentTokenType() == constsym)
+    {
+        dec = const_declaration();
+        
+        if (dec == 0)
+        {
+            if (getCurrentTokenType() != semicolonsym)
+            {
+                return 5;
+            }
+            return 0;
+        }
+        else
+        {
+            return dec;
+        }
+    }
+    
+    if (getCurrentTokenType() == varsym)
+    {
+        dec = var_declaration();
+        if (dec == 0)
+        {
+            if (getCurrentTokenType() != semicolonsym)
+            {
+                return 5;
+            }
+            else
+            {
+                nextToken();
+                return 0;
+            }
+        }
+        
+        else
+        {
+            return dec;
+        }
+    }
+    
+    if (getCurrentTokenType() == procsym) //procedure declaration
+    {
+        dec = proc_declaration();
+        if(dec != 0)
+        {
+            return dec;
+        }
+    }
+    statement();
     return 0;
 }
 
