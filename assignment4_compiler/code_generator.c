@@ -461,9 +461,33 @@ int term()
 
 int factor()
 {
-    /**
-     * TODO
-     * */
+    if(getCurrentTokenType() == identsym)
+    {
+        nextToken();
+        return 0;
+    }
+    // Is that a numbersym?
+    else if(getCurrentTokenType() == numbersym)
+    {
+        nextToken();
+        return 0;
+    }
+    
+    else if(getCurrentTokenType() == lparentsym)
+    {
+        nextToken();
+        int err = expression();
+        if(err) return err;
+        if(getCurrentTokenType() != rparentsym)
+        {
+            return 13;
+        }
+        nextToken();
+    }
+    else
+    {
+        return 14;
+    }
     
     return 0;
 }
