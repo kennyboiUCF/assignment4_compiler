@@ -327,7 +327,7 @@ int statement()
         {
             return 9;
         }
-        emit(JPC, 0, 0, 0);
+        emit(JPC, currentReg, vmCode[currentLevel].l, vmCode[currentLevel].m);
         nextToken();
         statement();
     }
@@ -345,7 +345,7 @@ int statement()
         
         nextToken();
         statement();
-        emit(JMP, 0, 0, 0);
+        emit(JMP, currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
     }
     return 0;
 }
@@ -354,7 +354,7 @@ int condition()
 {
     if(getCurrentTokenType() == oddsym)
     {
-        emit(ODD, 0, 0, 0);
+        emit(ODD, currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
         nextToken();
         expression();
     }
@@ -370,30 +370,30 @@ int condition()
         {
             if (getCurrentTokenType() == eqsym)
             {
-                emit(EQL, 0, 0, 0);
+                emit(EQL,  currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
             }
             
             else if (getCurrentTokenType() == neqsym)
             {
-                emit(NEQ, 0, 0, 0);
+                emit(NEQ,  currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
             }
             
             else if (getCurrentTokenType() == lessym)
             {
-                emit(LSS, 0, 0, 0);
+                emit(LSS,  currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
             }
             
             else if (getCurrentTokenType() == leqsym)
             {
-                emit(LEQ, 0, 0, 0);
+                emit(LEQ,  currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
             }
             else if (getCurrentTokenType() == gtrsym)
             {
-                emit(GTR, 0, 0, 0);
+                emit(GTR,  currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
             }
             else if (getCurrentTokenType() == geqsym)
             {
-                emit(GEQ, 0, 0, 0);
+                emit(GEQ,  currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
             }
             
         }
@@ -413,7 +413,7 @@ int expression()
         term();
         if (cursym == minussym)
         {
-            emit(NEG, 0, 0, 0);
+            emit(NEG, currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
         }
     }
     else
@@ -427,11 +427,11 @@ int expression()
         term();
         if (cursym == plussym)
         {
-            emit(ADD, 0, 0, 0);
+            emit(ADD, currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
         }
         else
         {
-            emit(SUB, 0, 0, 0);
+            emit(SUB, currentReg, vmCode[currentLevel].l, vmCode[currentLevel].m);
             
         }
     }
@@ -448,11 +448,11 @@ int term()
         factor();
         if (getCurrentTokenType() == multsym )
         {
-            emit(MUL, 0, 0, 0);
+            emit(MUL, currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
         }
         else
         {
-            emit(DIV, 0, 0, 0);
+            emit(DIV, currentReg,  vmCode[currentLevel].l, vmCode[currentLevel].m);
         }
         
     }
