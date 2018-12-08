@@ -300,10 +300,37 @@ int condition()
 
 int expression()
 {
-    /**
-     * TODO
-     * */
-    
+    int cursym;
+    if (getCurrentTokenType() == plussym || getCurrentTokenType() == minussym)
+    {
+        cursym = getCurrentTokenType();
+        nextToken();
+        term();
+        if (cursym == minussym)
+        {
+            emit(NEG, 0, 0, 0);
+        }
+    }
+    else
+    {
+        term();
+    }
+    while (getCurrentTokenType() == plussym || getCurrentTokenType() == minussym)
+    {
+        cursym = getCurrentTokenType();
+        nextToken();
+        term();
+        if (cursym == plussym)
+        {
+            emit(ADD, 0, 0, 0);
+        }
+        else
+        {
+            emit(SUB, 0, 0, 0);
+            
+        }
+    }
+
     return 0;
 }
 
